@@ -9,6 +9,9 @@ namespace MK_Falldown
 {
     public class Config : IRocketPluginConfiguration
     {
+        public byte FalldownMinHealth;
+        public int FalldownDuration;
+
         public float FallDownStartEffectTime;
         public float FallDownTime;
         public float FallDownEndTime;
@@ -18,6 +21,9 @@ namespace MK_Falldown
         public ushort FallDownEndEffectID;
         public void LoadDefaults()
         {
+            FalldownMinHealth = 15;
+            FalldownDuration = 30;
+
             FallDownStartEffectTime = 5;
             FallDownTime = 5;
             FallDownEndTime = 10;

@@ -43,7 +43,7 @@ namespace MK_Falldown
                 throw new WrongUsageOfCommandException(caller, this);
             }
 
-            if (utarget.Player.TryGetComponent(out PlayerComponent target))
+            if (!utarget.Player.TryGetComponent(out PlayerComponent target))
             {
                 UnturnedChat.Say(caller, Plugin.Instance.Translate("stopfalldown_error"), Color.red);
                 throw new WrongUsageOfCommandException(caller, this);

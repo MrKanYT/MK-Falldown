@@ -44,7 +44,7 @@ namespace MK_Falldown
                 UnturnedChat.Say(uplayer, Plugin.Instance.Translate("falldown_player_not_found"), Color.red);
                 throw new WrongUsageOfCommandException(caller, this);
             }
-            if (utarget.Player.TryGetComponent(out PlayerComponent target))
+            if (!utarget.Player.TryGetComponent(out PlayerComponent target))
             {
                 UnturnedChat.Say(uplayer, Plugin.Instance.Translate("falldown_error"), Color.red);
                 throw new WrongUsageOfCommandException(caller, this);

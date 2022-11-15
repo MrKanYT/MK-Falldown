@@ -15,19 +15,42 @@ namespace MK_Falldown
         public static Config cfg => Instance.Configuration.Instance;
         protected override void Load()
         {
+            Instance = this;
             PlayerLife.onPlayerDied += PlayerLife_onPlayerDied;
+
+            PlayerLife.OnTellHealth_Global += onTellHealthGlobal;
             base.Load();
+        }
+
+        private void onTellHealthGlobal(PlayerLife life)
+        {
+            if (life.health == 0) return;
+
+            if (life.health <= Configuration.Instance.FalldownMinHealth)
+            {
+                if (!life.player.TryGetComponent(out PlayerComponent pc) || pc == null || pc.isFalledDown) return;
+                pc.FallDown(Configuration.Instance.FalldownDuration);
+            }
+            else
+            {
+                if (!life.player.TryGetComponent(out PlayerComponent pc) || pc == null || !pc.isFalledDown) return;
+                pc.StopFallDown();
+            }
+            
+
         }
 
         private void PlayerLife_onPlayerDied(PlayerLife sender, EDeathCause cause, ELimb limb, Steamworks.CSteamID instigator)
         {
-            if (!sender.player.TryGetComponent(out PlayerComponent target)) return;
-            target.StopFallDown();
+            if (!sender.player.TryGetComponent(out PlayerComponent pc) || pc == null || !pc.isFalledDown) return;
+            pc.StopFallDown();
         }
 
         protected override void Unload()
         {
+            Instance = null;
             PlayerLife.onPlayerDied -= PlayerLife_onPlayerDied;
+            PlayerLife.OnTellHealth_Global -= onTellHealthGlobal;
             base.Unload();
         }
 

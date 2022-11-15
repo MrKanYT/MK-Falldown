@@ -31,20 +31,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\Steam\steamapps\common\Unturned\Unturned_Data\Managed\Assembly-CSharp.dll</HintPath>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Steam\steamapps\common\Unturned\Unturned_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="com.rlabrecque.steamworks.net">
       <HintPath>..\..\Steam\steamapps\common\Unturned\Unturned_Data\Managed\com.rlabrecque.steamworks.net.dll</HintPath>
     </Reference>
-    <Reference Include="Rocket.API">
-      <HintPath>..\..\Steam\steamapps\common\Unturned\Extras\Rocket.Unturned\Rocket.API.dll</HintPath>
+    <Reference Include="Rocket.API, Version=4.9.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Steam\steamapps\common\U3DS\Modules\Rocket.Unturned\Rocket.API.dll</HintPath>
     </Reference>
-    <Reference Include="Rocket.Core">
-      <HintPath>..\..\Steam\steamapps\common\Unturned\Extras\Rocket.Unturned\Rocket.Core.dll</HintPath>
+    <Reference Include="Rocket.Core, Version=4.9.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Steam\steamapps\common\U3DS\Modules\Rocket.Unturned\Rocket.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Rocket.Unturned">
-      <HintPath>..\..\Steam\steamapps\common\Unturned\Extras\Rocket.Unturned\Rocket.Unturned.dll</HintPath>
+    <Reference Include="Rocket.Unturned, Version=4.9.3.13, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Steam\steamapps\common\U3DS\Modules\Rocket.Unturned\Rocket.Unturned.dll</HintPath>
     </Reference>
     <Reference Include="SDG.NetTransport">
       <HintPath>..\..\Steam\steamapps\common\Unturned\Unturned_Data\Managed\SDG.NetTransport.dll</HintPath>
